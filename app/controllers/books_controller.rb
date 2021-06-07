@@ -6,12 +6,14 @@ before_action :ensure_correct_user, only: [:update, :edit]
     @book = Book.find(params[:id])
     @newbook = Book.new
     @book_comment = BookComment.new
-    
+
   end
 
   def index
+    
+    
     @book = Book.new
-    @books = Book.all
+    @books = Book.all.sort {|a, b| b.favorites.count <=> a.favorites.count}
   end
 
   def create
@@ -51,7 +53,7 @@ before_action :ensure_correct_user, only: [:update, :edit]
   def book_params
     params.require(:book).permit(:title, :body)
   end
-  
+
   def ensure_correct_user
     @book = Book.find(params[:id])
     unless @book.user == current_user
