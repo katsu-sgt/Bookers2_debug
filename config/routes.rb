@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   end
   
   get '/search' => 'searches#search'
-  
-  resources :groups
+  resources :groups, exept: [:destroy]
   
 end
