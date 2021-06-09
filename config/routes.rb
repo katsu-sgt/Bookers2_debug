@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   get '/search' => 'searches#search'
   resources :groups, exept: [:destroy]
   
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create, :show]
+  
 end
