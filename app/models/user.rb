@@ -31,7 +31,7 @@ class User < ApplicationRecord
   
   # DM機能
   has_many :user_rooms, dependent: :destroy
-  has_many :messages, dependent: :destroy
+  has_many :chats, dependent: :destroy
 
 #ユーザーをフォローする
   def follow(user_id)
