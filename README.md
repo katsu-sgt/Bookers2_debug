@@ -1,2 +1,2 @@
-# DMMWEBCAMP 応用課題7b
-## Advance 7b Finish
+# Bookers2 応用課題8b
+## Advance 8b Finished
